@@ -17,6 +17,33 @@ PlayStation Joy Controller Interface Package for ROS2.
 | **galactic** | [`galactic`](https://github.com/HarvestX/PlayStation-JoyInterface-ROS2/tree/galactic) | [![Galactic CI](https://github.com/HarvestX/PlayStation-JoyInterface-ROS2/actions/workflows/ci_galactic.yml/badge.svg?branch=main)](https://github.com/HarvestX/PlayStation-JoyInterface-ROS2/actions/workflows/ci_galactic.yml?branch=main)
 | **humble** | [`humble`](https://github.com/HarvestX/PlayStation-JoyInterface-ROS2/tree/humble) | [![Humble CI](https://github.com/HarvestX/PlayStation-JoyInterface-ROS2/actions/workflows/ci_humble.yml/badge.svg?branch=main)](https://github.com/HarvestX/PlayStation-JoyInterface-ROS2/actions/workflows/ci_humble.yml?branch=main)
 
+## Build
+
+Run the following commands from the root of your colcon workspace.
+
+```bash
+cd ~/colcon_ws
+rosdep install --from-paths src --ignore-src -r -y
+colcon build --symlink-install --packages-up-to p9n
+source install/setup.bash
+```
+
+## Run
+
+Launch the PlayStation controller teleop node.
+
+```bash
+ros2 launch p9n_bringup teleop.launch.py hw_type:=DualSense
+```
+
+You can also run it with turtlesim.
+
+```bash
+ros2 launch p9n_bringup teleop_turtlesim.launch.py hw_type:=DualSense
+```
+
+Set `hw_type` to one of `DualShock3`, `DualShock4`, or `DualSense`.
+
 
 ## How to use the interface library
 1. Initialize controller interface with the specific hardware type.
