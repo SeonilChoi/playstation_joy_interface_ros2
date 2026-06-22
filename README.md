@@ -73,7 +73,7 @@ void Example::onJoyCallback(sensor_msgs::msg::Joy::ConstSharedPtr joy_msg) {
 | Any             | `bool`  | `pressedAny();`       | Return `true` when pressed                                        |
 | □               | `bool`  | `pressedSquare();`    |                                                                   |
 | ○               | `bool`  | `pressedCircle();`    |                                                                   |
-| □               | `bool`  | `pressedTriangle();`  |                                                                   |
+| △               | `bool`  | `pressedTriangle();`  |                                                                   |
 | ☓               | `bool`  | `pressedCross();`     |                                                                   |
 | L1              | `bool`  | `pressedL1();`        |                                                                   |
 | R1              | `bool`  | `pressedR1();`        |                                                                   |
